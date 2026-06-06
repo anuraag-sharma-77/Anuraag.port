@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Anuraag Sharmar | Frontend Developer">
+  <meta name="description"
+    content="Detail-oriented Frontend Developer specializing in modern web technologies. Bringing visionary ideas to life.">
+
+  <!-- Open Graph / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:url" content="https://sooraj-sharma.vercel.app/"> -->
+  <meta property="og:title" content="Anuraag Sharma | Frontend Developer" />
+  <meta property="og:description"
+    content="Portfolio featuring Premium UI, Modern Architecture, and React/Node applications." />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/Nishendra734056/my-portfolio/main/images/portt.gif" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <!-- PWA Setup -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#050505" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress"></div>
+  <!-- PERCENTAGE PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-text">Loading System...</div>
+    <div id="loader-percent" class="counter">0%</div>
+    <div class="preloader-line">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+
+  <div class="bg-ambient"></div>
+  <div id="particles-js"></div>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast">
+    <span style="font-size: 1.2rem">✨</span>
+    <div class="toast-content">
+      <strong>Success</strong>
+      <p>Message secured and transmitted!</p>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <h2 id="modal-title">Project Title</h2>
+        <div id="modal-tags" class="tech-tags" style="justify-content: flex-start"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-slider">
+          <button id="slider-prev">&lt;</button>
+          <img id="modal-image" src="" alt="Project Preview" />
+          <button id="slider-next">&gt;</button>
+        </div>
+        <div class="modal-info">
+          <h3>Overview</h3>
+          <p id="modal-desc">Project description goes here.</p>
+          <a id="modal-link" href="#" target="_blank" class="btn-submit" style="
+                display: inline-block;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 20px;
+                font-size: rem;
+                padding: 15px 30px;
+              ">Launch Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL -->
+  <div id="resume-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content" style="max-width: 500px; text-align: center">
+      <button class="modal-close" id="close-resume">&times;</button>
+      <h2 style="margin-bottom: 20px">Curriculum Vitae</h2>
+      <div style="
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 30px;
+          ">
+        <h3 style="
+              color: var(--primary);
+              font-size: 1.5rem;
+              margin-bottom: 10px;
+            ">
+          Anuraag-Sharma-Resume.pdf
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem">
+          Size: 240 KB | Type: Document
+        </p>
+      </div>
+      <a href="Anuraag.pdf" target="_blank" download class="btn-submit magnetic-btn" style="
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            padding: 20px 0;
+          ">Initialize Download</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="logo">Anuraag<span></span></div>
+    <nav>
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+        <svg id="sun-icon" viewBox="0 0 24 24" fill="none" class="hidden">
+          <path
+            d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5M17.6859 17.69L18.5 18.5M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <svg id="moon-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <button id="resume-trigger" class="btn-resume magnetic-btn">
+        Resume
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content" data-aos="fade-right">
+        <span class="hero-tag">Available for frontend development roles</span>
+        <h1 class="gsap-reveal">Architect. <br>Develop. <br><span class="gradient-text">Engineer.</span></h1>
+        <p class="gsap-reveal-delay">
+        <p>
+          I'm Anuraag Sharma, a Frontend Developer with 1.5 years of experience building scalable and responsive web
+          applications. I specialize in React.js, JavaScript, TypeScript, API integration, state management, and modern
+          UI development, creating fast and user-friendly digital experiences.
+        </p>
+
+        <div class="hero-btns gsap-reveal-delay">
+          <a href="#projects" class="btn-resume magnetic-btn">Explore Work</a>
+          <a href="https://github.com/anuraag-sharma-77" target="_blank" class="social-link">
+            <img src="images/github.png" class="mode-invert icon-size"> GitHub
+          </a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" class="social-link">
+            <img src="images/social.png" class="mode-invert icon-size"> LinkedIn
+          </a>
+          <a
+              href="Anuraag.pdf"
+              download="Anuraag-Sharma-Resume.pdf"
+              class="resume-btn"
+            >
+              ⬇ Resume
+            </a>
+        </div>
+      </div>
+      <div class="hero-image gsap-reveal-img">
+        <img src="images/Anuraag.jpg" alt="Anuraag Sharma" class="gsap-parallax" data-speed="-1">
+      </div>
+    </section>
+
+    <!-- ABOUT & SKILLS (Bento Grid) -->
+    <section id="about">
+      <div class="bento-grid">
+        <!-- Bio -->
+        <div class="module bento-about" data-aos="fade-up">
+          <h3>Biography</h3>
+          <p style="font-size: 1.3rem; color: var(--text-muted); max-width: 600px; line-height: 1.8;">
+            Detail-oriented <strong>Frontend Developer</strong> with expertise in React.js and modern web technologies.
+            I create responsive, high-performance web applications, transforming creative ideas into engaging digital
+            experiences through clean code and intuitive user interfaces.
+          </p>
+          <div style="display:flex; gap:50px; margin-top:40px;">
+            <div>
+              <h4 id="github-repos" style="font-size:2.5rem; font-weight:800; color:var(--text);">--</h4>
+              <p style="color:var(--primary); font-family:var(--font-mono); font-size:0.85rem; letter-spacing:1px;">
+                GITHUB REPOS</p>
+            </div>
+            <div>
+              <h4 style="font-size:2.5rem; font-weight:800; color:var(--text);">BCA</h4>
+              <p style="color:var(--primary); font-family:var(--font-mono); font-size:0.85rem; letter-spacing:1px;">
+                J.N.U,
+                JAIPUR</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="module bento-skills" data-aos="fade-up" data-aos-delay="100">
+          <h3>Tech Stack</h3>
+          <div class="skills-grid">
+            <div class="skill-pill">
+              <img src="images/react.png" /> React.js
+            </div>
+
+            <div class="skill-pill"><img src="images/js.png" />Next.js</div>
+
+            <div class="skill-pill">
+              <img src="images/nodes.png" /> Node.js
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/expressjs.jpg" /> Express.js
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/typescript.jpeg" /> TypeScript
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/reactnavigation.jpeg" /> React Navigation
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/redux.jpeg" /> Redux
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/context.jpeg" /> Context API
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/mui.jpeg" /> Material UI
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/talwindcss.jpeg" /> Tailwind CSS
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/restapi.png" /> RESTful APIs
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/axios.jpeg" /> Axios
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/fetchapi.png" /> Fetch API
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/firebase.png" /> Firebase
+            </div>
+
+            <div class="skill-pill"><img src="images/github.jpeg" /> Git</div>
+
+            <div class="skill-pill"><img src="images/git.jpeg" /> GitHub</div>
+
+            <div class="skill-pill">
+              <img src="images/post.jpeg" /> Postman
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/vscode.jpeg" /> VS Code
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/google.jpeg" /> Google Maps API
+            </div>
+
+            <div class="skill-pill"><img src="images/fcmt.png" /> FCM</div>
+
+            <div class="skill-pill">
+              <img src="images/stripe.jpeg" /> Stripe
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/razorpay.png" /> Razorpay
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/cashfree.jpeg" /> Cashfree
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/paypal.jpeg" /> PayPal
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/android.jpeg" /> Android
+            </div>
+
+
+            <div class="skill-pill">
+              <img src="images/js.png" /> JavaScript
+            </div>
+
+            <div class="skill-pill">
+              <img src="images/html-5.png" /> HTML5
+            </div>
+
+            <div class="skill-pill"><img src="images/css-3.png" /> CSS3</div>
+            <div class="skill-pill">
+              <img src="images/bootstrap.jpeg" /> Bootstrap
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="module bento-edu" data-aos="fade-up" data-aos-delay="200">
+          <h3>Academic Journey</h3>
+          <div style="display:flex; gap:80px; flex-wrap:wrap; margin-top: 20px;">
+            <div style="position: relative; padding-left: 20px; border-left: 2px solid var(--primary);">
+              <h4 style="color:var(--primary); font-family:var(--font-mono); margin-bottom:10px; font-size: 0.9rem;">
+                2022 - 2025</h4>
+              <p style="font-weight:700; font-size: 1.2rem; color: var(--text);">Bachelor of Computer Applications</p>
+              <p style="color:var(--text-muted); font-size: 1rem; margin-top: 5px;">🎓 Jaipur National University,
+                Jaipur
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="projects">
+      <div class="section-title">
+        <h2 data-aos="fade-up">
+          Selected
+          <span class="gradient-text" style="display: inline-block">Work</span>
+        </h2>
+      </div>
+
+      <div class="projects-container">
+        <!-- Project Healthcare -->
+        <div class="project-card" data-title="MockPortal" data-tags="MReact.js, Next.js, Node.js, Express.js, MongoDB, Mongoose, JWT, Redux Toolkit, Tailwind CSS, REST APIs, Git, GitHub, Deployment, Full-Stack Development."
+          data-images="images/mock2.gif,images/mock.gif"
+          data-desc="An enterprise-grade SSC Mock Test Portal featuring AI-powered performance analysis, real-time exam simulations, comprehensive question banks, detailed result tracking, and a robust, secure Node.js & MongoDB backend architecture. Designed to help SSC aspirants improve accuracy, speed, and exam readiness through an intuitive and scalable online testing platform."
+          data-link="https://ssccbt.cbexams.com/sscmocktest/reg.aspx#:~:text=Disclaimer%3A,examination%2C%20such%20as%20section%2Dwise%20timers."
+          data-aos="fade-up">
+          <div class="project-img"><img src="images/mock3.gif" alt="mock"></div>
+          <div class="project-body">
+            <div class="tech-tags"><span>React.Js</span><span>Next.Js</span><span>Node.Js</span><span>Express.Js</span><span>MongoDB</span><span>REST APIs</span><span>Axios, Git & GitHub</span><span>Git & GitHub</span></div>
+            <h3>SSC MockPortal</h3>
+            <p>Mock test and exam preparation platform with performance analytics, authentication, dashboards, and
+              real-time API integration.</p>
+            <span class="project-link">Go to SSC MockPortal<span style="font-size: 1.2rem;">↗</span></span>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project-card" data-title="Premium Portfolio Platform" data-tags="React,Modern UI,Animations"
+          data-images="images/portt.gif,images/react.png"
+          data-desc="A sophisticated digital identity designed to showcase projects with dynamic Neo-Brutalism and Glassmorphism. Features full GSAP integration and intelligent cursor mapping."
+          data-link="#" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img"><img src="images/portt.gif" alt="Portfolio Preview"></div>
+          <div class="project-body">
+            <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Animations</span></div>
+            <h3>Premium Portfolio Platform</h3>
+            <p>A modern responsive portfolio website showcasing projects, technical skills, experience, and interactive
+              UI animations.</p>
+            <span class="project-link">Go to Portfolio <span style="font-size: 1.2rem;">↗</span></span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-title="RahiTrip Ticket BOOKING" data-tags="React.js, Next.js, Node.js, Express.js, MongoDB, Mongoose, JWT, Redux Toolkit, Tailwind CSS, REST APIs, Git, GitHub, Deployment, Full-Stack Development."
+          data-images="images/rahi.gif,images/rahi2.gif"
+          data-desc="An immersive footwear marketplace focused on smooth user journeys, rapid checkout interactions, and stunning 3D product displays."
+          data-link="https://www.rahitrips.com/" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <img src="images/rahitrip.gif" alt="rahitrip">
+          </div>
+          <div class="project-body">
+
+            <div class="tech-tags"><span>React.Js</span><span>Next.Js</span><span>Node.Js</span><span>Express.Js</span><span>MongoDB</span><span>REST APIs</span><span>Axios, Git & GitHub</span><span>Git & GitHub</span>
+            </div>
+            <h3>Rahi Trip Ticket Bookings</h3>
+            <p>Travel booking platform with flight search, booking flow, responsive design, authentication, and
+              API-driven user experience</p>
+            <span class="project-link">Go to Flyte BOOKING <span style="font-size: 1.2rem;">↗</span></span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-title="AirRun Footwear" data-tags="E-Commerce,JavaScript,DOM"
+          data-images="images/12.gif,images/Shopping.gif"
+          data-desc="An immersive footwear marketplace focused on smooth user journeys, rapid checkout interactions, and stunning 3D product displays."
+          data-link="https://sooraj734056.github.io/ShoeShop/" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img"><img src="images/12.gif" alt="AirRun Preview"></div>
+          <div class="project-body">
+            <div class="tech-tags"><span>E-Commerce</span><span>JavaScript</span><span>DOM</span></div>
+            <h3>AirRun Footwear</h3>
+            <p>An immersive footwear marketplace focused on smooth user journeys, rapid checkout interactions, and
+              stunning product displays.</p>
+            <span class="project-link">Go to PAGE <span style="font-size: 1.2rem;">↗</span></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-section" data-aos="fade-up">
+        <div class="contact-info">
+          <h2>Ready to build the <span class="gradient-text">future?</span></h2>
+          <p style="font-size:1.2rem; color:var(--text-muted); margin-bottom:40px; line-height:1.8;"> I'm always
+            excited to collaborate on innovative web applications, frontend experiences, React projects, and
+            creative digital products. Whether you're a startup, business owner, or fellow developer, let's discuss
+            how we can turn your ideas into reality.</p>
+          <div>
+            <p
+              style="color:var(--primary); font-family:var(--font-mono); font-size:0.85rem; letter-spacing:1px; margin-bottom: 5px;">
+              DROP A LINE</p>
+            <div class="email-copy-container" id="copy-email-btn">
+              <a href="mailto:ndagur211@gmail.com" style="color: var(--text); font-weight:700; text-decoration:none;">
+                anuraag.7877@gmail.com
+              </a>
+              <span class="copy-icon">📋</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email Address" required>
+          <textarea id="message" placeholder="Tell me about your amazing project..." rows="5" required></textarea>
+          <button type="submit" id="submitBtn" class="btn-submit">
+            <span class="btn-text">Initialize Transmission</span>
+            <div class="spinner hidden"></div>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button id="terminal-trigger" class="terminal-trigger">
+    &gt;_ Terminal
+  </button>
+
+  <div id="terminal-overlay" class="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <span>root@Anuraag-system:~</span>
+        <button id="close-terminal">&times;</button>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div>
+          Welcome to AnuraagOS v1.0.0. Type 'help' to see available commands.
+        </div>
+      </div>
+      <div class="terminal-input-line">
+        <span>guest@anuraag:~$ </span>
+        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus />
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div style="margin-bottom: 20px">
+      <span style="
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--border-glow);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+          ">
+        <span style="
+              width: 8px;
+              height: 8px;
+              background: #ff0055;
+              border-radius: 50%;
+              box-shadow: 0 0 10px #ff0055;
+              animation: pulse-glow 1.5s infinite;
+            "></span>
+        LIVE VISITS:
+        <strong id="live-visitors" style="color: var(--text)">1,245</strong>
+      </span>
+    </div>
+    <p>&copy; 2025 Anuraag Sharma. Innovating on the web.</p>
+  </footer>
+
+  <!-- Libs -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

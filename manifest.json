@@ -1,0 +1,21 @@
+{
+  "name": "Sooraj Sharma | Portfolio",
+  "short_name": "Sooraj",
+  "description": "Premium Full Stack Developer Portfolio",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#00f0ff",
+  "icons": [
+    {
+      "src": "images/suraj.png.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "images/suraj.png.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
